@@ -1,17 +1,30 @@
-# Python
+# ---- Python ----
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 
-# Virtual environment
+# ---- Virtual Environments ----
 venv/
 env/
+ENV/
+.venv/
 
-# Django
+# ---- Django ----
 db.sqlite3
+*.log
 
-# Static files (collected)
+# Static files collected for production
 staticfiles/
 
-# IDE
+# Media uploads (optional, unless you want to track them)
+media/
+
+# ---- IDE / Editor ----
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# ---- System Files ----
+.DS_Store
+Thumbs.db
