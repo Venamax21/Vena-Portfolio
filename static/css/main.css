@@ -80,32 +80,22 @@ ul{
 
 /* Contact links hover effect */
 .contact-link {
-    text-decoration: none;
-    /* Remove default underline */
-    color: black;
-    /* Default text color */
-    padding: 4px 8px;
-    /* Optional padding for the box */
-    border-radius: 5px;
-    /* Rounded corners */
-    transition: all 0.3s ease;
-    /* Smooth hover animation */
+    color: #007bff; /* normal blue text */
+    text-decoration: none; /* remove underline by default */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent; /* reserve space for underline */
 }
 
 .contact-link:hover {
-    background-color: black;
-    /* Black box */
-    color: white;
-    /* White text */
-    text-decoration: none;
-    /* Ensure no underline on hover */
+    color: #0056b3; /* darker blue on hover */
+    border-bottom: 2px solid #007bff; /* underline appears */
 }
 
 .active-link,
 .active-link:hover {
-    background-color: #d0b796 !important;
+    background-color: #040404ff !important;
     /* stay brown on hover */
-    color: #000 !important;
+    color: #f7f7f7ff !important;
     /* keep text black */
     border-radius: 5px;
     padding: 5px 10px;
