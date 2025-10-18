@@ -1,88 +1,26 @@
+{% extends 'base/base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Vena</title>
-    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-    body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-    
-        }
-    .nav-link {
-    font-size: 1.2rem;
-    color: #000000 !important;
-    margin-right: 20px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-        .nav-link:hover {
-    color: #000000 !important;
-    border: 2px solid #000000 !important;
-    background-color: transparent !important;
-}
 
-.active-link {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border: 2px solid #000000 !important;
-    border-radius: 5px;
-}
-    </style>
+{% block title %}Contact - Vena{% endblock %}
 
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{% static 'images/vena.jpeg' %}" alt="Vena Logo" class="mr-2"
-                style="height:70px; width:70px; border-radius:70%;">
-            <span>Vena's Portfolio</span>
-        </a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-        <a class="nav-link {% if request.path == '/' %}active-link{% endif %}" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link {% if request.path == '/project/' %}active-link{% endif %}" href="{% url 'project' %}">My Projects</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link {% if request.path == '/contact/' %}active-link{% endif %}" href="{% url 'contact' %}">Contact Me</a>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Contact Section -->
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Left column: contact info -->
-            <div class="col-md-4">
-                <h4>Contact Me</h4>
-                <p><strong>Name:</strong> <span class="contact-link" href="Vanlal Vena">Vanlal Vena</span></p>
-                <p><strong>Email:</strong> <a class="contact-link" href="mailto:vena.jh123@gmail.com">vena.jh123@gmail.com</a></p>
-                <!-- <p><strong>Projects:</strong> <a class="contact-link" href="https://github.com/Venamax21?tab=repositories"
-                        target="_blank">github.com/Venamax21</a></p> -->
-                <p><strong>Phone:</strong> <a class="contact-link" href="tel:+15155253906">(515) 525-3906</a></p>
-                <p><strong>Resume:</strong>
-                    <a class="contact-link" href="{% static 'images/Resume_Vanlal_Vena.pdf' %}" download>Download PDF</a>
-                </p>
-            </div>
-
-            <!-- Right column: big resume image -->
-            <div class="col-md-8 text-center mb-5">
-                <img src="{% static 'images/VenaResume.png' %}" alt="Resume" class="img-fluid rounded">
-            </div>
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4" style="font-size: 1.35rem;">
+            <h4>Contact Me</h4>
+            <p><strong>Name:</strong> Vanlal Vena</p>
+            <p><strong>Email:</strong> <a class="contact-link"
+                    href="mailto:vena.jh123@gmail.com">vena.jh123@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a class="contact-link" href="tel:+15155253906">(515) 525-3906</a></p>
+            <p><strong>Resume:</strong>
+                <a class="contact-link" href="{% static 'images/Resume_Vanlal_Vena.pdf' %}" download>Download PDF</a>
+            </p>
         </div>
+
+        <div class="col-md-8 text-center mb-5">
+            <img src="{% static 'images/VenaResume.png' %}" alt="Resume" class="img-fluid rounded">
+        </div> 
     </div>
-</body>
-<script src="{% static 'js/main.js' %}"></script>
-</html>
+</div>
+{% endblock %}

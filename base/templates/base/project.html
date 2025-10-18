@@ -1,137 +1,56 @@
+{% extends 'base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Vena</title>
-    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-        }
-        .nav-link {
-    font-size: 1.2rem;
-    color: #000000 !important;
-    margin-right: 20px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-        .nav-link:hover {
-    color: #000000 !important;
-    border: 2px solid #000000 !important;
-    background-color: transparent !important;
-}
+{% block title %}Projects - Vena{% endblock %}
 
-.active-link {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border: 2px solid #000000 !important;
-    border-radius: 5px;
-}
-    </style>
+{% block content %}
+<div class="container mt-4">
+    <h2>My Projects</h2>
 
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{% static 'images/vena.jpeg' %}" alt="Vena Logo" class="mr-2"
-                style="height:70px; width:70px; border-radius:70%;">
-            <span>Vena's Portfolio</span>
-        </a>
-        
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <a class="nav-link {% if request.path == '/' %}active-link{% endif %}" href="{% url 'home' %}">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {% if request.path == '/project/' %}active-link{% endif %}" href="{% url 'project' %}">My Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {% if request.path == '/contact/' %}active-link{% endif %}" href="{% url 'contact' %}">Contact Me</a>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Projects Section -->
-    <div class="container mt-4">
-        <h2>My Projects</h2>
-        
-        <!-- Project 1 -->
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <img src="{% static 'images/github.png' %}" alt="GitHub" width="80">
-                <p style="font-size: 20px;">
-                    <strong>My Projects:</strong>
-                    <a href="https://github.com/Venamax21?tab=repositories" target="_blank">github.com/Venamax21</a>
-                </p>    
-            </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <img src="{% static 'images/github.png' %}" alt="GitHub" width="80">
-                <h5 class="mt-2">Math Quiz</h5>
-                <a href="https://venamax21.github.io/MathQuiz-demo/" class="btn btn-primary" target="_blank">Live Demo</a>
-                <div class="hero-image">
-                <img src="{% static 'images/MathQuiz.png'%}" alt="Vena Picture" style="width: 1000px; height: auto; border-radius: 10px;">
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <img src="{% static 'images/github.png' %}" alt="GitHub" width="80">
-                <h5 class="mt-2">React Quiz</h5>
-                <a href="https://venamax21.github.io/React-Quiz/"  class="btn btn-primary" target="_blank">Live Demo</a>
-                <div class="hero-image">
-                    <img src="{% static 'images/React1.png'%}" alt="Vena Picture"
-                        style="width: 800px; height: auto; border-radius: 10px;">
-                    <img src="{% static 'images/React2.png'%}" alt="Vena Picture"
-                        style="width: 800px; height: auto; border-radius: 10px;">
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <img src="{% static 'images/github.png' %}" alt="GitHub" width="80">
-                <h5 class="mt-2">10K Race Event</h5>
-                <div class="hero-image">
-                    <img src="{% static 'images/RaceInfo.png'%}" alt="Vena Picture" 
-                    style="width: 800px; height: auto; border-radius: 10px;">
-                    <img src="{% static 'images/RaceInfo2.png'%}" alt="Vena Picture"
-                        style="width: 800px; height: auto; border-radius: 10px;">
-                </div>
-            </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="card mb-4">
-            <div class="card-body text-center">
-                <img src="{% static 'images/github.png' %}" alt="GitHub" width="80">
-                <h5 class="mt-2">Musical Play</h5>
-                <div class="hero-image">
-                    <img src="{% static 'images/Theater.png'%}" alt="Vena Picture"
-                        style="width: 1000px; height: auto; border-radius: 10px;">
-                </div>
-            </div>
-        </div>
-
+    <!-- Project 1 -->
+    <div class="card mb-4 text-center project">
+        <img src="{% static 'images/github.png' %}" alt="GitHub" class="mb-2 d-block mx-auto" width="50">
+        <p style="font-size: 20px;">
+            <strong>My Projects:</strong>
+            <a href="https://github.com/Venamax21?tab=repositories" target="_blank">github.com/Venamax21</a>
+        </p>
     </div>
-    <script src="{% static 'js/main.js' %}"></script>
 
-</body>
-</html>
+    <!-- Project 2 -->
+    <div class="card mb-4 text-center project">
+        <h5 class="mt-2">Math Quiz</h5>
+        <a href="https://venamax21.github.io/MathQuiz-demo/" class="btn btn-primary mb-2" target="_blank">Live Demo</a>
+        <div class="hero-image">
+            <img src="{% static 'images/MathQuiz.png'%}" alt="Math Quiz">
+        </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card mb-4 text-center project">
+        <h5 class="mt-2">React Quiz</h5>
+        <a href="https://venamax21.github.io/React-Quiz/" class="btn btn-primary mb-2" target="_blank">Live Demo</a>
+        <div class="hero-image">
+            <img src="{% static 'images/React1.png'%}" alt="React Quiz">
+            <img src="{% static 'images/React2.png'%}" alt="React Quiz">
+        </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="card mb-4 text-center project">
+        <h5 class="mt-2">10K Race Event</h5>
+        <div class="hero-image">
+            <img src="{% static 'images/RaceInfo.png'%}" alt="10K Race">
+            <img src="{% static 'images/RaceInfo2.png'%}" alt="10K Race">
+        </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="card mb-4 text-center project">
+        <h5 class="mt-2">Musical Play</h5>
+        <div class="hero-image">
+            <img src="{% static 'images/Theater.png'%}" alt="Musical Play">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
