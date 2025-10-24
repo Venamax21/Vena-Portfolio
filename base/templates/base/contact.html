@@ -17,10 +17,15 @@
                 <a class="contact-link" href="{% static 'images/Resume_Vanlal_Vena.pdf' %}" download>Download PDF</a>
             </p>
         </div>
-
+        
         <div class="col-md-8 text-center mb-5">
+            <div id="contact-form" class="mb-4"></div>
             <img src="{% static 'images/VenaResume.png' %}" alt="Resume" class="img-fluid rounded">
         </div> 
     </div>
 </div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script type="module" src="{% static 'vueform/main.js' %}"></script>
+
 {% endblock %}
