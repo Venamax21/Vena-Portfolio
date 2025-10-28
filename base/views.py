@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.conf import settings
 from django.http import JsonResponse
 import json
 import os
 from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 from sendgrid.helpers.mail import Mail, Email
 from django.views.decorators.csrf import csrf_exempt
 
@@ -18,6 +20,9 @@ def about(request):
 
 def contact(request):
     return render(request, 'base/contact.html')
+
+sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
+print("API Key:", os.environ.get("SENDGRID_API_KEY"))
 
 
 # Vue form POST endpoint
@@ -48,7 +53,7 @@ def sendmail(request):
 
             # Create the SendGrid Mail object
             mail = Mail(
-                from_email='vanlal.vena@drake.edu',  # must be verified in SendGrid
+                from_email = os.environ.get("FROM_EMAIL"),
                 to_emails='vena.jh123@gmail.com',     # your inbox
                 subject=subject,
                 plain_text_content=content,

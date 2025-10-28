@@ -9,6 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Example: Access your SendGrid API key
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+FROM_EMAIL = os.getenv("FROM_EMAIL")
 
 # SECURITY
 SECRET_KEY = 'django-insecure-6%qw-nks^cwov)svid=1x^k(fc27)r*9x2e8-qh3fy&6#p3$1#'
@@ -98,11 +99,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #Email backend using Gmail
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'vena.jh123@gmail.com'      # your Gmail
-EMAIL_HOST_PASSWORD = 'Assassinate!@2025'     # Gmail App Password
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")  # store this in env variables
+EMAIL_HOST_USER = 'apikey'  # literally the string 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+DEFAULT_FROM_EMAIL = 'vena.jh123@gmail.com'  # your email
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False  # set True to test without sending email
+
 
