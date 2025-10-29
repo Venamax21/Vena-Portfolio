@@ -4,9 +4,7 @@ import os
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Example: Access your SendGrid API key
-SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
-FROM_EMAIL = os.environ.get("FROM_EMAIL")
+
 # SECURITY
 SECRET_KEY = 'django-insecure-6%qw-nks^cwov)svid=1x^k(fc27)r*9x2e8-qh3fy&6#p3$1#'
 DEBUG = False
@@ -98,6 +96,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")  # store this in env variables
+FROM_EMAIL = os.environ.get("FROM_EMAIL")
 EMAIL_HOST_USER = 'apikey'  # literally the string 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 DEFAULT_FROM_EMAIL = 'vena.jh123@gmail.com'  # your email
