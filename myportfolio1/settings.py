@@ -1,16 +1,12 @@
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Example: Access your SendGrid API key
-SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
-FROM_EMAIL = os.getenv("FROM_EMAIL")
-
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+FROM_EMAIL = os.environ.get("FROM_EMAIL")
 # SECURITY
 SECRET_KEY = 'django-insecure-6%qw-nks^cwov)svid=1x^k(fc27)r*9x2e8-qh3fy&6#p3$1#'
 DEBUG = True
