@@ -9,7 +9,7 @@ SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 FROM_EMAIL = os.environ.get("FROM_EMAIL")
 # SECURITY
 SECRET_KEY = 'django-insecure-6%qw-nks^cwov)svid=1x^k(fc27)r*9x2e8-qh3fy&6#p3$1#'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['venav-e9epbyada8erehdq.centralus-01.azurewebsites.net', '127.0.0.1', 'localhost', 'venaportfolio.com', 
                  'www.venaportfolio.com', '192.168.4.24']
 #ALLOWED_HOSTS = ["*"]
